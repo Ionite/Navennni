@@ -1,0 +1,26 @@
+<ion-modal-view>
+	<ion-header-bar class="bar-dark">
+		<h1 class="title">You have been robbed</h1>
+	</ion-header-bar>
+	<ion-content>
+		<div class="list">
+			<label class="item item-assertive item-text-wrap">
+				Select {{robberNumToKeep}} resource cards to keep. The other will be taken by the robber.
+			</label>
+		</div>
+		<!-- resources -->
+		<img 
+			ng-repeat="resource in robberResourceList"
+			class="item-robber{{resource.selected ? ' selected' : ''}}" 
+			width="80"
+			ng-src="img/{{resource.type}}.png"
+			ng-alt="{{resource.type}}"
+			ng-click="modalRobberToggleSelectCard(resource)"
+		/>
+
+		<button class="button button-block button-positive" ng-click="modalRobberOkay()" ng-disabled="!robberAllowClose">
+			Okay
+			<i class="icon ion-checkmark"></i>
+		</button>
+	</ion-content>
+</ion-modal-view>

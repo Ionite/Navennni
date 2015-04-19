@@ -1,0 +1,22 @@
+<ion-view>
+	<ion-nav-title>Intro</ion-nav-title>
+	<ion-content scroll="false">
+		<ion-slide-box>
+			<ion-slide>
+				<div>
+					<p>Ludum Dare 32 theme:</p>
+					<h1 class="weapon">An unconventional weapon</h1>
+					<p>- How boring.. lets re-order the letters a bit (and flip W upside down)</p>
+				</div>
+			</ion-slide>
+			<ion-slide>
+				<div class>
+					<h1>Can U Leap To <span class="moon">Moon</span>, Navennni?</h1>
+					<p>- Ah That's much better.</p>
+
+					<a class="button button-positive" ng-click="onPlayGameClick()">{{isActive() ? 'Continue game' : 'Lets play the Game!'}}</a>
+				</div>
+			</ion-slide>
+		</ion-slide-box>
+	</ion-content>
+</ion-view>

@@ -1,0 +1,31 @@
+<ion-modal-view>
+	<ion-header-bar class="bar-dark">
+		<h1 class="title">{{detailsEdge.mIsRoad ? 'Road' : 'Build road?'}}</h1>
+		<div class="buttons">
+			<button class="button button-clear" ng-click="closeEdgeModal()">
+				<i class="icon ion-close"></i>
+			</button>
+		</div>
+	</ion-header-bar>
+	<ion-content>
+		<form>
+		<div class="list">
+			<!-- resources -->
+			<label class="item item-input">
+				<span class="input-label">From</span>
+				<p>{{detailsEdge.mFrom.mName}}</p>
+			</label>
+			<label class="item item-input">
+				<span class="input-label">To</span>
+				<p>{{detailsEdge.mTo.mPlayerTown ? detailsEdge.mTo.mName : 'Place to build a town'}}</p>
+			</label>
+
+			<label class="item" ng-if="!detailsEdge.mIsRoad">
+				<button class="button button-block button-positive" ng-click="modalEdgeBuildRoad()" ng-disabled="!canBuildRoad">Build road here</button>
+				<p>Cost: 1 wood and 1 clay</p>
+			</label>
+		</div>
+		</form>
+	</ion-content>
+</ion-modal-view>
+

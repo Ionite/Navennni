@@ -1,0 +1,166 @@
+/*
+To customize the look and feel of Ionic, you can override the variables
+in ionic's _variables.scss file.
+
+For example, you might change some of the default colors:
+
+$light:                           #fff !default;
+$stable:                          #f8f8f8 !default;
+$positive:                        #387ef5 !default;
+$calm:                            #11c1f3 !default;
+$balanced:                        #33cd5f !default;
+$energized:                       #ffc900 !default;
+$assertive:                       #ef473a !default;
+$royal:                           #886aea !default;
+$dark:                            #444 !default;
+*/
+
+// The path for our ionicons font files, relative to the built CSS in www/css
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+
+// Include all of Ionic
+@import "www/lib/ionic/scss/ionic";
+
+/* -- SVG canvas size -- */
+.superfill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}
+
+.superfill .scroll {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}
+
+svg.canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+
+  width: 100%;
+  min-height: 100%;
+}
+
+/* -- Position floating widgets -- */
+.position-top-left {
+	position: absolute;
+	top: 50px;
+	left: 5px;
+}
+.position-top-right {
+	position: absolute;
+	top: 50px;
+	right: 5px;
+}
+.position-bottom-left {
+	position: absolute;
+	bottom: 5px;
+	left: 5px;
+}
+.position-bottom-right {
+	position: absolute;
+	bottom: 5px;
+	right: 5px;
+}
+
+
+/* -- Resource related -- */
+.resource-utility1, .resource-utility2, .resource-utility3, .resource-utility4, .resource-utility5 {
+	display: block;
+
+	p {
+		padding: 5px;
+		color: #000;
+	}
+}
+$resource-width-multiplier: 30px;
+.resource-utility1 { // probability: 1/36
+	width: 1 * $resource-width-multiplier;
+}
+.resource-utility2 { // probability: 2/36
+	width: $resource-width-multiplier * 2;
+}
+.resource-utility3 { // probability: 3/36
+	width: $resource-width-multiplier * 3;
+}
+.resource-utility4 { // probability: 4/36
+	width: $resource-width-multiplier * 4;
+}
+.resource-utility5 { // probability: 5/36
+	width: $resource-width-multiplier * 5;
+}
+/* -- Robber modal -- */
+.item-robber {
+	margin: 2px;
+	border: 5px solid white;
+}
+.item-robber.selected {
+	background-color: #56c9ff !important;
+	border: 5px solid #56c9ff !important;
+	border-radius: 5px;
+}
+
+/* -- Other game related -- */
+.last-dice-outcome {
+	font-size: 20px;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+}
+
+/* -- On moon -- */
+.on-moon {
+	text-align: center;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+
+	h1 {
+		margin-top: 55px;
+		margin-bottom: 35px;
+		font-size: 20px;
+	}
+
+	button {
+		margin-top: 25px;
+	}
+}
+
+/* -- into slide box -- */
+
+.slider {
+  min-height: 100%;
+}
+.slider-slide {
+  color: #000;
+  background-color: #fff;
+  padding-top: 30px;
+  padding-right: 20px;
+  padding-left: 20px;
+  text-align: center;
+
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  font-weight: 300;
+}
+.slider h1 {
+	font-size: 24px;
+}
+.slider p {
+	margin-top: 20px;
+}
+.slider .button {
+	margin-top: 30px;
+}
+.slider .weapon {
+	color: #f00;
+}
+.slider .moon {
+	color: #00f;
+}

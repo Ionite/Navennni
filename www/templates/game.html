@@ -1,0 +1,184 @@
+<ion-view on-window-resize>
+	<ion-nav-title>
+	{{!onMoon ? 'To the moon, Navennni!' : 'Victory'}}
+	</ion-nav-title>
+	<ion-content class="superfill" scroll="false">
+
+		<div ng-if="!onMoon">
+			<svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="canvas">
+				<defs>
+					<linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+						<stop offset="0%" style="stop-color:rgb(195,195,195);stop-opacity:1" />
+						<stop offset="100%" style="stop-color:rgb(180,180,180);stop-opacity:1" />
+					</linearGradient>
+					<linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="0%">
+						<stop offset="0%" style="stop-color:rgb(255,0,0);stop-opacity:1" />
+						<stop offset="100%" style="stop-color:rgb(200,0,0);stop-opacity:1" />
+					</linearGradient>
+					<linearGradient id="roof-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+						<stop offset="0%" style="stop-color:rgb(41, 37, 37);stop-opacity:1" />
+						<stop offset="100%" style="stop-color:rgb(31,27,27);stop-opacity:1" />
+					</linearGradient>
+				</defs>
+				<!-- island -->
+				<g ng-cloak>
+					<rect
+						ng-x="0"
+						ng-y="0"
+						ng-width="{{xOffset * 2}}"
+						ng-height="{{yOffset * 2}}"
+						ng-fill="#b3e0db" />
+					<ellipse
+						ng-cx="{{xOffset}}"
+						ng-cy="{{yOffset}}"
+						ng-rx="{{1.35 * scale}}" ng-ry="{{0.9 * scale}}"
+						ng-fill="#bfb" />
+				</g>
+				<!-- Larger invisible locations for extended click area. -->
+				<g ng-repeat="location in locations" ng-cloak>
+					<ellipse
+						ng-cx="{{location.mX * scale + xOffset}}"
+						ng-cy="{{location.mY * scale + yOffset}}"
+						ng-rx="{{0.20 * scale}}" ng-ry="{{0.2 * scale}}"
+						ng-fill="transparent"
+						ng-click="onLocationClick($index)" />
+				</g>
+				<!-- Wider invisible edges for larger click area -->
+				<g ng-repeat="edge in edges" ng-cloak>
+					<line
+						ng-x1="{{edge.mFrom.mX * scale + xOffset}}"
+						ng-y1="{{edge.mFrom.mY * scale + yOffset}}"
+						ng-x2="{{edge.mTo.mX * scale + xOffset}}"
+						ng-y2="{{edge.mTo.mY * scale + yOffset}}"
+						ng-stroke="transparent"
+						ng-stroke-width="{{0.1 * scale}}"
+						ng-click="onEdgeClick($index)" />
+				</g>
+				<!-- Actually visible edges -->
+				<g ng-repeat="edge in edges" ng-cloak>
+					<line
+						ng-x1="{{edge.mFrom.mX * scale + xOffset}}"
+						ng-y1="{{edge.mFrom.mY * scale + yOffset}}"
+						ng-x2="{{edge.mTo.mX * scale + xOffset}}"
+						ng-y2="{{edge.mTo.mY * scale + yOffset}}"
+						ng-stroke="{{edge.mIsRoad ? 'red' : '#ccc'}}"
+						ng-stroke-width="{{0.04 * scale}}"
+						ng-stroke-dasharray="{{edge.mIsRoad ? '' : 0.04 * scale + ', ' + 0.04 * scale}}"
+						ng-click="onEdgeClick($index)" />
+				</g>
+				<!-- Locations w/o town/city -->
+				<g ng-repeat="location in locations" ng-cloak ng-if="!location.mPlayerTown">
+					<ellipse
+						ng-cx="{{location.mX * scale + xOffset}}"
+						ng-cy="{{location.mY * scale + yOffset}}"
+						ng-rx="{{0.1 * scale}}" ng-ry="{{0.1 * scale}}"
+						ng-fill="{{location.mPlayerTown ? 'url(#grad2)' : 'url(#grad1)'}}"
+						ng-click="onLocationClick($index)" />
+				</g>
+				<!-- Towns -->
+				<g ng-repeat="location in locations" ng-cloak
+					ng-if="location.mPlayerTown && !location.mIsCity"
+					ng-transform="
+						translate({{location.mX * scale + xOffset}}, {{location.mY * scale + yOffset}})
+						scale({{0.0025 * scale}})
+						">
+					<!-- roof -->
+					<path
+						d="m 48.605314,-30 -30.199391,-25.4548 -0.08742,-20.21028 -6.587424,0 -0.174847,14.98289 -12.34969556,-10.2274 -47.84536044,40.90959 z"
+						fill="url(#roof-grad)"
+						ng-click="onLocationClick($index)"
+					/>
+					<!-- house -->
+					<path
+						d="m -29.479972,-30 0,57.93987 60.013823,0 0,-57.93987 z"
+						fill="url(#grad2)"
+						ng-click="onLocationClick($index)"
+					/>
+				</g>
+				<!-- Cities -->
+				<g ng-repeat="location in locations" ng-cloak
+					ng-if="location.mPlayerTown && location.mIsCity"
+					ng-transform="
+						translate({{location.mX * scale + xOffset}}, {{location.mY * scale + yOffset}})
+						scale({{0.0025 * scale}})
+						translate(-10, -30)
+						">
+					<!-- large house to right/up -->
+					<!-- roof -->
+					<path
+						d="m 48.605314,-70 -30.199391,-25.4548 -0.08742,-20.21028 -6.587424,0 -0.174847,14.98289 -12.34969556,-10.2274 -47.84536044,40.90959 z"
+						fill="url(#roof-grad)"
+						ng-click="onLocationClick($index)"
+					/>
+					<!-- house -->
+					<path
+						d="m -29.479972,-70 0,97.93987 60.013823,0 0,-97.93987 z"
+						fill="url(#grad2)"
+						ng-click="onLocationClick($index)"
+					/>
+					<!-- small house to left/down -->
+					<!-- roof -->
+					<path
+						d="m 88.605314, 10 -30.199391,-25.4548 -0.08742,-20.21028 -6.587424,0 -0.174847,14.98289 -12.34969556,-10.2274 -47.84536044,40.90959 z"
+						fill="url(#roof-grad)"
+						ng-click="onLocationClick($index)"
+					/>
+					<!-- house -->
+					<path
+						d="m 11.479972, 10 0,57.93987 60.013823,0 0,-57.93987 z"
+						fill="url(#grad2)"
+						ng-click="onLocationClick($index)"
+					/>
+				</g>
+				<g ng-cloak>
+					<text
+						ng-repeat="location in locations" 
+						ng-if="location.mPlayerTown"
+						ng-x="{{xOffset + location.mX * scale}}"
+						ng-y="{{yOffset + (location.mY + 0.18) * scale}}"
+						text-anchor="middle"
+						ng-fill="#333">{{location.mName}}</text>
+				</g>
+				<!-- Resource inventory -->
+				<g>
+					<rect
+						ng-repeat="res in resourceDefs"
+						ng-x="{{0.10 * scale}}"
+						ng-y="{{yOffset + 0.30 * scale + $index * 0.1 * scale}}"
+						ng-width="{{0.1 * scale}}"
+						ng-height="{{0.1 * scale}}"
+						fill="{{resourceColors[res]}}"
+						ng-click="alert(res)"
+					/>
+
+					<text
+						ng-repeat="res in resourceDefs"
+						ng-x="{{0.25 * scale}}"
+						ng-y="{{yOffset + 0.40 * scale + $index * 0.1 * scale}}"
+						fill="{{resourceTextColors[res]}}"
+					>{{resourceStore[res]}} {{res}}</text>
+
+				</g>
+			</svg>
+
+			<div class="position-top-left last-dice-outcome" ng-if="lastDiceOutcome">
+				{{lastDiceOutcome[0] + lastDiceOutcome[1]}}
+			</div>
+
+			<button class="button button-positive position-top-right" ng-click="onDevelopmentCardsClick()">Dev. cards</button>
+
+			<button class="button button-assertive position-bottom-right" ng-click="onEndTurnClick()" ng-if="!canGoToSpace">End turn</button>
+			<button class="button button-positive position-bottom-right" ng-click="onGoToSpaceClick()" ng-if="canGoToSpace">To the moon!</button>
+
+		</div><!-- end of not on moon -->
+
+		<div class="on-moon" ng-if="onMoon">
+			<h1><br/>You made it to the moon, Vanennni!</h1>
+
+			<p><b>Game Points: </b>{{numPoints}}</p>
+			<p><b>Number of game turns: </b>{{numTurns}}</p>
+
+			<button class="button button-positive" ng-click="onNewGameClick()">New game</button>
+		</div>
+	</ion-content>
+</ion-view>

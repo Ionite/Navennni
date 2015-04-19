@@ -1,0 +1,26 @@
+<ion-modal-view>
+	<ion-header-bar class="bar-dark">
+		<h1 class="title">Development Cards</h1>
+		<div class="buttons">
+			<button class="button button-clear" ng-click="closeDevelopmentCardsModal()">
+				<i class="icon ion-close"></i>
+			</button>
+		</div>
+	</ion-header-bar>
+	<ion-content>
+		<form>
+		<div class="list">
+			<!-- resources -->
+			<label class="item item-thumbnail-left" ng-repeat="card in developmentCards">
+				<img ng-src="{{card.mImgSrc}}"/>
+				{{card.mTitle}}
+			</label>
+
+			<label class="item">
+				<button class="button button-block button-positive" ng-click="modalDevelopmentCardsBuyCard()" ng-disabled="!canBuyDevelopmentCard">Buy a development card</button>
+				<p>Cost: 1 sheep, 1 grain and 1 stone</p>
+			</label>
+		</div>
+		</form>
+	</ion-content>
+</ion-modal-view>

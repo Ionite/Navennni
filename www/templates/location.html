@@ -1,0 +1,41 @@
+<ion-modal-view>
+	<ion-header-bar class="bar-dark">
+		<h1 class="title">{{detailsLocation.mPlayerTown ? detailsLocation.mName : 'Build a town here?'}}</h1>
+		<div class="buttons">
+			<button class="button button-clear" ng-click="closeLocationModal()">
+				<i class="icon ion-close"></i>
+			</button>
+		</div>
+	</ion-header-bar>
+	<ion-content>
+		<form>
+		<div class="list">
+			<!-- resources -->
+			<label class="item item-input" ng-repeat="resource in detailsLocation.mResources">
+				<span class="input-label" style="color: {{resourceTextColors[resource.mType]}}">
+					
+					<img ng-src="img/{{resource.mType}}.png" width="22px" height="22px">
+					{{resource.mType}}</span>
+				<div class="resource-utility{{resource.mUtility}}" style="background-color: {{resourceColors[resource.mType]}}; color: #000" >
+					<p>{{resource.mDiceSum}}</p>
+				</div>
+			</label>
+
+			<label class="item item-thumbnail-left item-button-right" ng-if="detailsLocation.mPlayerTown">
+				<img ng-src="{{detailsLocation.mIsCity ? 'img/city.png' : 'img/town.png'}}">
+				{{detailsLocation.mIsCity ? 'City' : 'Town'}}
+				<button class="button button-positive" ng-click="modalLocationBuildCity()" ng-disabled="!canAffordCity" ng-if="!detailsLocation.mIsCity">Upgrade</button>
+				<p ng-if="!detailsLocation.mIsCity">Upgrade cost: 2 grain and 3 stone</p>
+			</label>
+			<label class="item item-input" ng-if="detailsLocation.mPlayerTown">
+				<span class="input-label">Rename</span>
+				<input type="text" ng-model="detailsLocation.mName">
+			</label>
+			<label class="item" ng-if="!detailsLocation.mPlayerTown">
+				<button class="button button-block button-positive" ng-click="modalLocationBuildTown()" ng-disabled="!canAffordTown">Build a town here</button>
+				<p>Cost: 1 wood, 1 clay, 1 sheep and 1 grain</p>
+			</label>
+		</div>
+		</form>
+	</ion-content>
+</ion-modal-view>
