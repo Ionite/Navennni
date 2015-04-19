@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="100"
+   height="100"
+   viewBox="0 0 99.999997 99.999997"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="city.svg"
+   inkscape:export-filename="C:\Users\Leif\Programmering\HTML5\Vennni\www\img\city.png"
+   inkscape:export-xdpi="299.9946"
+   inkscape:export-ydpi="299.9946">
+  <defs
+     id="defs4">
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#roof-grad"
+       id="linearGradient5303"
+       x1="-33.330625"
+       y1="-168.78812"
+       x2="33.307662"
+       y2="-168.78812"
+       gradientTransform="scale(1.4592833,0.68526791)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#grad2"
+       id="linearGradient5305"
+       x1="-37.660075"
+       y1="-54.795378"
+       x2="39.006384"
+       y2="-54.795378"
+       gradientTransform="scale(0.78279111,1.27748)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#roof-grad"
+       id="linearGradient5307"
+       x1="-5.9199089"
+       y1="-52.045455"
+       x2="60.718378"
+       y2="-52.045455"
+       gradientTransform="scale(1.4592833,0.68526791)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#grad2"
+       id="linearGradient5309"
+       x1="11.279866"
+       y1="10.177401"
+       x2="70.247595"
+       y2="10.177401"
+       gradientTransform="scale(1.0177401,0.98256912)"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="2"
+     inkscape:cx="-201.64286"
+     inkscape:cy="218.22926"
+     inkscape:document-units="px"
+     inkscape:current-layer="svg2"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1138"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     units="px">
+    <linearGradient
+       id="grad1"
+       x1="0%"
+       y1="0%"
+       x2="100%"
+       y2="0%">
+      <stop
+         offset="0%"
+         style="stop-color:rgb(195,195,195);stop-opacity:1"
+         id="stop4736" />
+      <stop
+         offset="100%"
+         style="stop-color:rgb(180,180,180);stop-opacity:1"
+         id="stop4738" />
+    </linearGradient>
+    <linearGradient
+       id="grad2"
+       x1="0%"
+       y1="0%"
+       x2="100%"
+       y2="0%">
+      <stop
+         offset="0%"
+         style="stop-color:rgb(255,0,0);stop-opacity:1"
+         id="stop4741" />
+      <stop
+         offset="100%"
+         style="stop-color:rgb(200,0,0);stop-opacity:1"
+         id="stop4743" />
+    </linearGradient>
+    <linearGradient
+       id="roof-grad"
+       x1="0%"
+       y1="0%"
+       x2="100%"
+       y2="0%">
+      <stop
+         offset="0%"
+         style="stop-color:rgb(41, 37, 37);stop-opacity:1"
+         id="stop4746" />
+      <stop
+         offset="100%"
+         style="stop-color:rgb(31,27,27);stop-opacity:1"
+         id="stop4748" />
+    </linearGradient>
+  </sodipodi:namedview>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-952.36223)" />
+  <g
+     id="g4753"
+     transform="matrix(0.52615657,0,0,0.52615657,39.485684,62.555466)">
+    <!-- roof -->
+    <path
+       d="m 48.605314,-70 -30.199391,-25.4548 -0.08742,-20.21028 -6.587424,0 -0.174847,14.98289 -12.34969556,-10.2274 L -48.638824,-70 Z"
+       id="path4755"
+       style="fill:url(#linearGradient5303)"
+       inkscape:connector-curvature="0" />
+    <!-- house -->
+    <path
+       d="m -29.479972,-70 0,97.93987 60.013823,0 0,-97.93987 z"
+       id="path4757"
+       style="fill:url(#linearGradient5305)"
+       inkscape:connector-curvature="0" />
+    <!-- small house to left/down -->
+    <!-- roof -->
+    <path
+       d="m 88.605314,10 -30.199391,-25.4548 -0.08742,-20.21028 -6.587424,0 -0.174847,14.98289 L 39.206536,-30.90959 -8.638824,10 Z"
+       id="path4759"
+       style="fill:url(#linearGradient5307)"
+       inkscape:connector-curvature="0" />
+    <!-- house -->
+    <path
+       d="m 11.479972,10 0,57.93987 60.013823,0 0,-57.93987 z"
+       id="path4761"
+       style="fill:url(#linearGradient5309)"
+       inkscape:connector-curvature="0" />
+  </g>
+</svg>
