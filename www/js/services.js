@@ -214,7 +214,7 @@ angular.module('starter.services', [])
 			if (!this.canAffordTown()) {
 				error.message = 'Cannot afford town. Requires 1 wood, 1 clay, 1 sheep and 1 grain';
 			}
-			else if (this.getTownCount >= 5) {
+			else if (this.getTownCount() >= 5) {
 				error.message = 'You already have the maximum number of towns. Upgrade some of your towns to city before you can build here';
 			}
 			if (error.message !== '') return false;
@@ -249,7 +249,7 @@ angular.module('starter.services', [])
 			else if (location_obj.mIsCity) {
 				error.message = 'You already have a city here';
 			}
-			else if (this.getCityCount >= 4) {
+			else if (this.getCityCount() >= 4) {
 				error.message = 'You already have the maximum number of cities. Buy development cards to advance to space program';
 			}
 			return error.message === '';
