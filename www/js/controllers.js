@@ -28,6 +28,10 @@ angular.module('starter.controllers', [])
 
 .controller('IntroCtrl', function($scope, $state, $ionicHistory, $ionicSlideBoxDelegate, GameService) {
 
+	$scope.onNextSlideClick = function() {
+		$ionicSlideBoxDelegate.next();
+	}
+
 	$scope.onPlayGameClick = function() {
 		$ionicHistory.nextViewOptions({
 			disableBack: true,
