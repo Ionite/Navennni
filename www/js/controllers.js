@@ -123,7 +123,9 @@ angular.module('starter.controllers', [])
 
 		// Robber modal
 		$ionicModal.fromTemplateUrl('templates/robber.html', {
-			scope: $scope
+			scope: $scope,
+			backdropClickToClose: false,
+			hardwareBackButtonClose: false,
 		}).then(function(modal) {
 			$scope.robberModal = modal;
 		});
